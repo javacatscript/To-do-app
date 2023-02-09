@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+
+  <body>
+    <h1><%= title %></h1>
+
+    <form action="/add-task" method="POST">
+      <!-- outermost div -->
+      <div id="container">
+        <!-- enter task div -->
+        <div id="description-div">
+          <input
+            type="text"
+            name="todo"
+            id="input-task"
+            placeholder="Enter a task to be added"
+            required
+          />
+        </div>
+        <!-- div for selecting category and date -->
+        <div id="category-and-due-date-div">
+          <!-- select category div -->
+          <div id="category-div">
+            <select name="category" id="select-category" required>
+              <option value="">Choose task type</option>
+              <option value="Personal">Personal</option>
+              <option value="Work">Work</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Cleaning">Cleaning</option>
+              <option value="EMIs">EMIs</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <!-- select due-date div  -->
+          <div id="due-date-div">
+            <input type="date" name="duedate" id="select-due-date" required />
+          </div>
+        </div>
+      </div>
+      <br />
+      <div id="buttons-div">
+        <button id="add-task-btn" type="submit">
+          <i class="fa-solid fa-plus"></i>Add Task
+        </button>
+        <!-- <button id="delete-btn" type="submit">Delete Task</button> -->
+      </div>
+    </form>
+
+    <!-- Todo tasks list goes here  -->
+
+    <form action="/delete-todo" method="post">
+      <ul>
+        <% for (let i in todos_list) { %>
+        <li id="task-list">
+          <div id="task-container">
+            <!-- //once a checkbox is selected the id of the selected checkbox will be sent in 
+            'value' (as string) and can be accessed using 'name' in the back-end -->
+            <!-- if multiple checkboxes are selected then an array of ids will be passed in 'value' -->
+            <input
+              id="checkbox"
+              type="checkbox"
+              name="ids"
+              value="<%= todos_list[i].id %>"
+            />
+            &nbsp
+            <span><%= todos_list[i].todo %></span>
+            <div id="task-details">
+              <p id="duedate">
+                <i class="fa-solid fa-calendar-days"></i><%= dates[i] %>
+              </p>
+              <button
+                class="task-category-btn"
+                id="<%= todos_list[i].category %>"
+              >
+                <%= todos_list[i].category %>
+              </button>
+            </div>
+          </div>
+        </li>
+        <% } %>
+      </ul>
+      <br />
+      <!-- show delete button only if there is at least one todo in the todos_list  -->
+      <% if (todos_list.length !== 0) { %>
+      <button type="submit" id="delete-task-btn">
+        <i id="delete-icon" class="fa-solid fa-trash"></i>
+        Delete Task(s)
+      </button>
+      <% } %>
+    </form>
+    <br /><br />
+  </body>
+</html>

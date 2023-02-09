@@ -1,0 +1,23 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "A To-Do List App using NodeJS, ExpressJS, MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "To-Do"
+  ],
+  "author": "rupank",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dayjs": "^1.11.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.1",
+    "nodemon": "^2.0.20"
+  }
+}

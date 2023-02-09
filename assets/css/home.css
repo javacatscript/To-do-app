@@ -1,0 +1,287 @@
+body {
+  margin: 0;
+  background-color: rgb(75, 1, 102);
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body > h1 {
+  text-align: center;
+  margin-top: 25px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  /* border: 1px solid white; */
+  height: 160px;
+  /* justify-content: center;
+  align-items: center; */
+  /* text-align: center; */
+  margin: auto;
+}
+
+#description-div {
+  width: 100%;
+  /* border: 1px solid black; */
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+#description-div > input {
+  font-size: 1.1rem;
+}
+
+select,
+select option {
+  font-size: 0.9rem;
+}
+
+#due-date-div > input {
+  font-size: 0.9rem;
+}
+
+#category-and-due-date-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* border: 1px solid red; */
+  height: 80px;
+  justify-content: space-between;
+}
+
+#category-div {
+  width: 49%;
+  /* border: 1px solid grey; */
+  height: 70px;
+  position: relative;
+}
+
+#due-date-div {
+  width: 49%;
+  /* border: 1px solid grey; */
+  height: 70px;
+}
+
+#select-category:hover,
+#select-due-date:hover {
+  cursor: pointer;
+}
+
+#buttons-div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 23vw;
+  /* border: 1px solid white; */
+  margin: auto;
+}
+
+#add-task-btn,
+#delete-task-btn {
+  width: 9.5rem;
+  height: 2.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#add-task-btn:hover,
+#delete-task-btn:hover {
+  cursor: pointer;
+  color: white;
+}
+
+#add-task-btn:hover {
+  border: 1px solid white;
+  background-color: rgb(75, 1, 102);
+}
+
+#delete-task-btn:hover {
+  border: 1px solid red;
+  background-color: rgb(255, 0, 0);
+}
+
+#delete-task-btn:hover .fa-trash {
+  color: white;
+}
+
+#add-task-btn:hover .fa-plus {
+  color: white;
+}
+
+#input-task {
+  width: inherit;
+  height: inherit;
+}
+
+#category-div select {
+  width: 100%;
+  height: 60px;
+}
+
+#category-div select option {
+  margin-bottom: 5px;
+  /* color: red; */
+}
+
+#due-date-div input {
+  width: 100%;
+  height: 60px;
+}
+
+#select-due-date,
+#select-category,
+#input-task {
+  border: none;
+  outline: none;
+}
+
+#select-due-date:focus,
+#select-category:focus,
+#input-task:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+/* setting custom grey borders */
+#select-due-date,
+#select-category {
+  border-top: 1px solid rgb(11, 1, 58);
+  border-bottom: 1px solid rgb(11, 1, 58);
+  padding: 5px;
+}
+
+#select-category {
+  border-right: 1px solid rgb(11, 1, 58);
+}
+
+#input-task {
+  border-top: 1px solid rgb(11, 1, 58);
+  padding: 5px;
+}
+
+#select-due-date,
+#select-category,
+#input-task {
+  border-radius: 4px;
+}
+
+/* styling the tasks list  */
+
+ul {
+  list-style: none;
+  /* border: 1px solid black; */
+  width: 40vw;
+  margin: 0 auto;
+  height: auto;
+  padding: 0;
+  margin-top: 32px;
+}
+
+ul #task-list {
+  border: 1px solid rgb(255, 253, 253);
+  margin: 10px auto;
+  width: 95%;
+  height: auto;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: left;
+  background-color: white;
+  color: black;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#task-container {
+  width: 100%;
+  /* border: 1px solid black; */
+  height: auto;
+}
+
+#task-details {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+
+#task-details p {
+  font-size: 0.8rem;
+}
+
+#checkbox + span,
+#checkbox ~ div > p#duedate {
+  color: black;
+  font-weight: 500;
+}
+
+#checkbox:checked + span,
+#checkbox:checked ~ div > p#duedate,
+#checkbox:checked ~ div > p i {
+  text-decoration: line-through;
+  color: rgb(94, 93, 93);
+}
+
+#checkbox:hover {
+  cursor: pointer;
+}
+
+#task-container span {
+  word-wrap: break-word;
+}
+
+.fa-plus,
+.fa-trash {
+  margin-right: 5px;
+  color: black;
+}
+
+.fa-calendar-days {
+  color: grey;
+  font-size: 0.9rem;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.task-category-btn {
+  border-radius: 2px;
+  height: 2rem;
+  width: 5.5rem;
+  color: white;
+  letter-spacing: 1.2px;
+}
+
+#Personal {
+  background-color: blueviolet;
+}
+
+#Work {
+  background-color: rgb(150, 25, 123);
+}
+
+#Cleaning {
+  background-color: rgb(27, 128, 27);
+}
+
+#Shopping {
+  background-color: rgba(255, 170, 13, 0.993);
+}
+
+#Other {
+  background-color: rgb(63, 63, 63);
+}
+
+#EMIs {
+  background-color: rgb(253, 46, 46);
+}
